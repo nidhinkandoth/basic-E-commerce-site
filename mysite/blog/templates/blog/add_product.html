@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>nidhins</title>
+        <title>sales</title>
     </head>
+    <body style="background-color:rgb(122, 206, 88);">
+        <h1 style="font-family:utopia;font-size:200%;color:white;">Add your product for sale</h1>
 
-    <body>
-        <h1>Add product</h1>
-
-        <form id="product_form" method="post" action="/blog/add_product/">
+        <form id="product_form" method="post" action="/blog/save_product/"enctype="multipart/form-data">
 
             {% csrf_token %}
             {% for field in form.visible_fields %}
                 {{ field.errors }}
                 {{ field.help_text }}
-                {{ field }}
+               <div> {{ field }}
+		</div>
             {% endfor %}
 
-            <input type="submit" name="submit" value="add product" />
+            <input type="submit" name="submit" value="Submit" />
         </form>
     </body>
 

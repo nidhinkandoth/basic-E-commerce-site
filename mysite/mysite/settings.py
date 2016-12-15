@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = '/home/projects_git/basic-E-commerce-site/mysite/media/'
+MEDIA_ROOT = 'media/'
 
 MEDIA_URL = '/media/'
 
