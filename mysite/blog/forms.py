@@ -7,4 +7,4 @@ class PostsSubmitForm(forms.ModelForm):
 		fields = ("title", "text","product_image")
 		
 		
-
+	

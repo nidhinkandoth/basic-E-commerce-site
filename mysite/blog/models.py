@@ -7,7 +7,7 @@ from django.utils import timezone
 class PostsSubmit(models.Model):
 	title = models.CharField(max_length=100)
 	text = models.TextField()
-	product_image = models.ImageField()
+	product_image = models.ImageField(upload_to='pic_folder/')
 	published_date = models.DateTimeField(blank = True, null = True)
 
 def publish(self):

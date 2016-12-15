@@ -12,15 +12,16 @@ def add_product(request):
 def save_product(request):
 	if request.method == "POST":	
 		form = PostsSubmitForm(request.POST, request.FILES)
-		print("outside if saveproduct")
+		#print("outside if saveproduct")
 		print(form.errors)
        		if form.is_valid():
-			print('save_productviewsample')
-       			form.save
+			#print('save_productviewsample')
+       			form.save()
        			context = {'form':form}
        			print form.errors
-	       		return render(request, 'blog/add_product', context)
+	       		return render(request, 'blog/save_product.html', context)
 	else:
        		form = PostsSubmitForm()
 		print(form.errors)
-  		return render(request, 'blog/save_product', {'form': form}) 
+  		return render(request, 'blog/add_product.html', {'form': form})
+
