@@ -2,16 +2,67 @@
     <head>
     <title>products</title> 
     <h1>These are the products</h1>
+    <style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+    padding: 0;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color:rgb (103, 159, 222);
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width:2525x;
+    height:1000px
+    margin: 3cm;
+    
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
     </head>
     <body>
-    <ul style="list-style-type:circle">
+<div>
+{% block content %}
+<nav>
+  <ul>
+    <li><a href="{% url 'login' %}">login</a></li>
+    <li><a href="{% url 'register'%}">New user? SignUp here</a></li>
+  </ul>
+</nav>
+{% endblock %}
+</div>
+
+    <ul>
     {% csrf_token %}
     {% for product in List %}
-       <h2> <li> {{ product.title }} </li></h2>
-        <li> {{ product.text }}</li>
-	</ul>
+       <div>
+	<article>
+	<h2> <li> {{ product.title }} </li></h2>
+         <p>{{ product.text }}</p>
+	</ul> 
        <img src= "{{ product.product_image.url}}", style="width:304px;height:228px;">
+     	</article>
+       </div>
     {% endfor %}
-
      </body>
 </html>

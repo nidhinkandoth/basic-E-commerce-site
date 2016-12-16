@@ -26,7 +26,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^base/$', TemplateView.as_view(template_name='registration/base.html'), name='base'),
-    url(r'^$', TemplateView.as_view(template_name='registration/home.html'), name='home'),
+    url(r'home/^$', TemplateView.as_view(template_name='registration/home.html'), name='home'),
     url(r'^login/$', auth_views.login,{'template_name': 'registration/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout,{'template_name': 'registration/logout.html'}, name='logout'),
     url(r'^admin/', admin.site.urls),

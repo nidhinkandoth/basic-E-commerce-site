@@ -5,7 +5,8 @@
     </head>
     <body style="background-color:rgb(122, 206, 88);">
         <h1 style="font-family:utopia;font-size:200%;color:white;">Add your product for sale</h1>
-
+	<a href="{% url 'logout' %}">LOGOUT</a>
+	<a href="{% url 'product_display' %}">See all products</a>
         <form id="product_form" method="post" action="/blog/save_product/"enctype="multipart/form-data">
 
             {% csrf_token %}
