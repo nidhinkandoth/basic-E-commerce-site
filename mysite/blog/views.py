@@ -31,4 +31,11 @@ def product_display(request):
 	List = PostsSubmit.objects.all()
 	context = {'List':List}
         return render(request, 'blog/product_display.html',context)
-
+def click_product(request, product_id):
+	#print List
+	#print product_id
+	obj = PostsSubmit.objects.get(id=product_id)
+	#print key
+	#obj = PostsSubmit.objects.get(id = key)
+	print obj
+	return  render(request,'click_product.html', {'obj':obj})

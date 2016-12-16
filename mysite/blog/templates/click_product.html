@@ -15,12 +15,10 @@
 
     <ul>
     {% csrf_token %}
-    {% for product in List %}
-       <div>
-	</ul> 
-       <img src= "{{ product.thumbnail.url}}"> 
-	<p> <li><a href="/product/{{product.id}}"> {{ product.title }} </a> </li></p>
+	<div>
+	<h2> <li> {{ obj.title }} </li></h2>
+       <img src= "{{ obj.product_image.url}}"> 
+	<p>{{obj.text}}</p>
        </div>
-    {% endfor %}
      </body>
 </html>
