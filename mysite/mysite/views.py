@@ -25,3 +25,14 @@ def register(request):
         user_form = UserForm()
 
     return render(request, 'registration/register.html', {'user_form': user_form,  'registered': registered})
+
+
+from blog.models import PostsSubmit
+
+def products(request):
+	context = PostsSubmit.objects.all()
+	return render(request, 'registration/products_display.html',context)
+	
+		
+
+

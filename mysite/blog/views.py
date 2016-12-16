@@ -25,3 +25,10 @@ def save_product(request):
 		print(form.errors)
   		return render(request, 'blog/add_product.html', {'form': form})
 
+
+ 
+def product_display(request):
+	List = PostsSubmit.objects.all()
+	context = {'List':List}
+        return render(request, 'blog/product_display.html',context)
+

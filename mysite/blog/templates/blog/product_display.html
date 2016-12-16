@@ -1,0 +1,17 @@
+<html>
+    <head>
+    <title>products</title> 
+    <h1>These are the products</h1>
+    </head>
+    <body>
+    <ul style="list-style-type:circle">
+    {% csrf_token %}
+    {% for product in List %}
+       <h2> <li> {{ product.title }} </li></h2>
+        <li> {{ product.text }}</li>
+	</ul>
+       <img src= "{{MEDIA_URL}}{{ product.product_image }}", style="width:304px;height:228px;">
+    {% endfor %}
+
+     </body>
+</html>

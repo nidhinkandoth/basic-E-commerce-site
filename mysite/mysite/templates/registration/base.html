@@ -6,7 +6,7 @@
 </head>
 <body>
   <header>
-    <h1>Login</h1>
+    <h1></h1>
     {% if user.is_authenticated %}
       Hi {{ user.username }}!
       <a href="{% url 'logout' %}">logout</a>
@@ -17,6 +17,7 @@
   <hr>
   <main>
     {% block content %}
+      <a href="{% url 'add_product' %}">Add product for sale</a>
     {% endblock %}
   </main>
   <hr>
