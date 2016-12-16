@@ -10,7 +10,7 @@
        <h2> <li> {{ product.title }} </li></h2>
         <li> {{ product.text }}</li>
 	</ul>
-       <img src= "{{MEDIA_URL}}{{ product.product_image }}", style="width:304px;height:228px;">
+       <img src= "{{ product.product_image.url}}", style="width:304px;height:228px;">
     {% endfor %}
 
      </body>
