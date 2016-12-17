@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <title>{% block title %}Welcome{% endblock %}</title>
 </head>
-<body>
+<body style="background-color:#e6e6e6;">
   <header>
     <h1></h1>
 	<div>
-  <img src="media/header.jpg"/>
   <h1>FindThings.com</h1>
+  <p>Best place to sell and buy products</p>
 </div>
     {% if user.is_authenticated %}
      <div> Hi {{ user.username }}!</div>
@@ -21,6 +21,7 @@
     {% else %}
       <div><a href="{% url 'login' %}">Login</a></div>
      <div> <li><a href="{% url 'register'%}">New user? SignUp here</a></li></div>
+     <div><li><a href="{% url 'product_display'%}">HOME</a></li>
     {% endif %}
   </header>
   <hr>

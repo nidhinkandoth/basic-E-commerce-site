@@ -6,7 +6,7 @@ from .forms import PostsSubmitForm
 def add_product(request):
 	form = PostsSubmitForm()
 	context = {'form':form}
-	return render(request, 'blog/add_product.html', context)	
+	return render(request, 'add_product.html', context)	
 
 	
 def save_product(request):
@@ -19,18 +19,18 @@ def save_product(request):
        			form.save()
        			context = {'form':form}
        			print form.errors
-	       		return render(request, 'blog/save_product.html', context)
+	       		return render(request, 'save_product.html', context)
 	else:
        		form = PostsSubmitForm()
 		print(form.errors)
-  		return render(request, 'blog/add_product.html', {'form': form})
+  		return render(request, 'add_product.html', {'form': form})
 
 
  
 def product_display(request):
 	List = PostsSubmit.objects.all()
 	context = {'List':List}
-        return render(request, 'blog/product_display.html',context)
+        return render(request, 'product_display.html',context)
 def click_product(request, product_id):
 	#print List
 	#print product_id

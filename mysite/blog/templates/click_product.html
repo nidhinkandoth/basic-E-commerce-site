@@ -1,13 +1,11 @@
 <html>
-</style>
-    </head>
-    <body>
+
+<body>
 <div>
 {% block content %}
 <nav>
   <ul>
-    <li><a href="{% url 'login' %}">login</a></li>
-    <li><a href="{% url 'register'%}">New user? SignUp here</a></li>
+{%include 'base.html' %}
   </ul>
 </nav>
 {% endblock %}

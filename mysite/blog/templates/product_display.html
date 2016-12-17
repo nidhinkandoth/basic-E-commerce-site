@@ -1,0 +1,28 @@
+<html>
+<header>
+<div>
+ <img src="media/header.jpg"/>
+</div>
+</header>
+<body style="background-color:#e6fff9;">
+<div>
+{% block content %}
+{% include "base.html" %}
+{% endblock %}
+</div>
+
+    <ul>
+    {% csrf_token %}
+    <table><tr>
+    {% for product in List %}
+       
+	</ul> 
+	<div>
+	<td>
+       <img src= "{{ product.thumbnail.url}}">
+	<p> <li><a href="/product/{{product.id}}"> {{ product.title }} </a> </li></p>
+       </div></td>
+    {% endfor %}
+	</tr></table>
+     </body>
+</html>

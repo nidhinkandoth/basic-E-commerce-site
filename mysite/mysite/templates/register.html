@@ -4,7 +4,7 @@
         <title>SignUp here</title>
     </head>
 
-    <body>
+    <body style="background-color:#e6fff9;">
         <h1>Sign Up here</h1>
 
         {% if registered %}
@@ -23,5 +23,6 @@
             <input type="submit" name="submit" value="Register" />
         </form>
         {% endif %}
+	<div> <li><a href="{% url 'login'%}">Already a user? Login here</a></li></div>
     </body>
 </html>

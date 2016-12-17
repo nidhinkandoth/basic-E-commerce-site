@@ -4,6 +4,7 @@ from .models import PostsSubmit
 class PostsSubmitForm(forms.ModelForm):
 	class Meta:
 		model = PostsSubmit
+
 		fields = ("title", "text","product_image")
 		
 		
